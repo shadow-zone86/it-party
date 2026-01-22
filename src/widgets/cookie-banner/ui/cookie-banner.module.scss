@@ -1,0 +1,97 @@
+@use '../../../app/styles/_variables' as *;
+@use '../../../app/styles/_mixins' as *;
+
+.banner {
+  position: fixed;
+  left: spacing(4);
+  bottom: spacing(4);
+  z-index: $z-index-modal;
+  max-width: 400px;
+  width: calc(100% - #{spacing(8)});
+  
+  @include media-max(md) {
+    left: spacing(2);
+    bottom: spacing(2);
+    width: calc(100% - #{spacing(4)});
+    max-width: none;
+  }
+}
+
+.content {
+  background-color: $color-bg-primary;
+  border-radius: 24px;
+  padding: spacing(6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  
+  @include flex(column, flex-start, flex-start);
+  gap: spacing(4);
+}
+
+.header {
+  @include flex(row, flex-start, center);
+  gap: spacing(3);
+  width: 100%;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: $font-family-primary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin: 0;
+  line-height: $line-height-tight;
+}
+
+.text {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+  margin: 0;
+}
+
+.button {
+  width: 100%;
+  padding: spacing(4) spacing(6);
+  border: 2px solid $color-text-primary;
+  border-radius: 12px;
+  background-color: transparent;
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  cursor: pointer;
+  transition: all $transition-base;
+  
+  &:hover {
+    background-color: $color-bg-secondary;
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.disclaimer {
+  font-family: $font-family-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
+
+.link {
+  color: $color-text-secondary;
+  text-decoration: underline;
+  transition: color $transition-base;
+  
+  &:hover {
+    color: $color-text-primary;
+  }
+}

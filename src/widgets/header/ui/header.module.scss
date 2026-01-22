@@ -1,0 +1,94 @@
+@use '../../../app/styles/_variables' as *;
+@use '../../../app/styles/_mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: transparent;
+  backdrop-filter: blur(10px); // Легкое размытие для эффекта стекла
+  padding: spacing(4) 0;
+}
+
+.nav {
+  @include flex(row, center, center);
+  gap: spacing(8);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 spacing(4);
+  position: relative;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  letter-spacing: 0.05em;
+  transition: opacity $transition-base;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.logo {
+  margin: 0 spacing(8);
+  flex-shrink: 0;
+  position: relative;
+
+  // Фиолетовый цвет для логотипа (#9B59B6)
+  // Используем CSS filter для изменения цвета SVG
+  img {
+    // Фиолетовый цвет через filter для SVG (примерно #9B59B6)
+    filter: brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(1352%) hue-rotate(240deg) brightness(100%) contrast(100%);
+  }
+}
+
+.menuButton {
+  display: none; // Показывается только на мобильных
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: spacing(2);
+  margin-left: spacing(4);
+
+  @include media-max(md) {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.menuIcon {
+  width: 24px;
+  height: 2px;
+  background-color: #4ECDC4; // Бирюзовый цвет
+  transition: all $transition-base;
+}
+
+// Адаптивность
+@include media-max(md) {
+  .nav {
+    gap: spacing(4);
+    padding: 0 spacing(2);
+  }
+
+  .navLink {
+    font-size: $font-size-sm;
+  }
+
+  .logo {
+    margin: 0 spacing(4);
+
+    img {
+      width: 120px;
+      height: auto;
+    }
+  }
+}
