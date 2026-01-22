@@ -1,7 +1,12 @@
 import type { NextConfig } from 'next'
 import path from 'path'
+import bundleAnalyzer from '@next/bundle-analyzer'
 
 const stylesPath = path.join(process.cwd(), 'src/app/styles')
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+})
 
 const nextConfig: NextConfig = {
   sassOptions: {
@@ -10,4 +15,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+export default withBundleAnalyzer(nextConfig)

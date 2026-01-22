@@ -1,0 +1,22 @@
+# robots.txt для IT Party
+
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию служебных путей
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Разрешаем индексацию основных страниц
+Allow: /
+Allow: /cases
+Allow: /services
+Allow: /solutions
+Allow: /contacts
+
+# Sitemap
+Sitemap: https://it-party.ru/sitemap.xml
+
+# Crawl-delay (опционально, если нужно замедлить краулеры)
+# Crawl-delay: 1
