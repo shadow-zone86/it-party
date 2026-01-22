@@ -1,0 +1,41 @@
+@use "variables";
+@use "mixins";
+
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: variables.$font-family-primary;
+  font-size: variables.$font-size-base;
+  line-height: variables.$line-height-base;
+  color: variables.$color-text-primary;
+  background-color: variables.$color-bg-primary;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: variables.$font-weight-bold;
+  line-height: variables.$line-height-heading;
+  color: variables.$color-text-primary;
+}
+
+// Links
+a {
+  color: variables.$color-primary;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: variables.$color-primary-dark;
+  }
+}

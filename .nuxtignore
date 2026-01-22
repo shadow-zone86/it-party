@@ -1,0 +1,9 @@
+.storybook
+storybook-static
+coverage
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+*.stories.ts
+*.stories.tsx
