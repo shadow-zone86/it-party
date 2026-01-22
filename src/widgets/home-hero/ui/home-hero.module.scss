@@ -1,0 +1,80 @@
+@use '../../../app/styles/_variables' as *;
+@use '../../../app/styles/_mixins' as *;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  @include flex(column, center, flex-start);
+  padding-top: 120px; // Отступ для фиксированного header
+  cursor: url('/cursor.svg') 12 12, auto;
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: auto;
+    cursor: url('/cursor.svg') 12 12, pointer;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    @include flex(column, flex-start, flex-start);
+    gap: spacing(6);
+    color: white;
+    text-align: left;
+    padding: spacing(8);
+    max-width: 1400px;
+    margin: 0;
+    margin-left: spacing(12);
+    pointer-events: none;
+  }
+
+  &__title {
+    font-size: 4.5rem;
+    font-weight: $font-weight-bold;
+    color: white;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  &__subtitle {
+    font-size: 4.5rem;
+    font-weight: $font-weight-bold;
+    color: white;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  &__description {
+    font-size: 1.5rem;
+    font-weight: $font-weight-normal;
+    color: white;
+    line-height: 1.5;
+    margin: 0;
+    margin-top: spacing(4);
+  }
+
+  &__accent {
+    color: #5bcad9;
+  }
+}

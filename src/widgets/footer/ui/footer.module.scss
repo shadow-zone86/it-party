@@ -1,0 +1,160 @@
+@use '../../../app/styles/_variables' as *;
+@use '../../../app/styles/_mixins' as *;
+
+.footer {
+  background-color: $color-bg-secondary;
+  padding: spacing(16) spacing(8);
+  color: $color-text-primary;
+}
+
+.footer__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: spacing(12);
+  position: relative;
+
+  @include media-max(lg) {
+    grid-template-columns: 1fr;
+    gap: spacing(8);
+  }
+}
+
+// Left Section
+.footer__left {
+  @include flex(column, flex-start, flex-start);
+  gap: spacing(6);
+}
+
+.footer__ctaButton {
+  background-color: $color-text-primary;
+  color: $color-bg-primary;
+  border: none;
+  border-radius: 12px;
+  padding: spacing(4) spacing(8);
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+.footer__social {
+  @include flex(row, flex-start, center);
+  gap: spacing(2);
+}
+
+.footer__socialButton {
+  background-color: $color-bg-primary;
+  color: $color-text-primary;
+  border: none;
+  border-radius: 8px;
+  padding: spacing(2) spacing(4);
+  font-family: $font-family-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all $transition-base;
+  min-width: 40px;
+  height: 40px;
+  @include flex(row, center, center);
+
+  &:hover {
+    background-color: $color-bg-tertiary;
+  }
+}
+
+.footer__copyright {
+  @include flex(column, flex-start, flex-start);
+  gap: spacing(2);
+  margin-top: spacing(4);
+
+  p {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    margin: 0;
+  }
+}
+
+.footer__privacyLink {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  text-decoration: underline;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+}
+
+.footer__slogan {
+  grid-column: 1 / -1;
+  font-size: 4rem;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: 1;
+  margin-top: spacing(8);
+  letter-spacing: -0.02em;
+
+  @include media-max(md) {
+    font-size: 3rem;
+  }
+
+  @include media-max(sm) {
+    font-size: 2rem;
+  }
+}
+
+// Right Section
+.footer__right {
+  @include flex(column, flex-start, flex-end);
+  gap: spacing(6);
+  text-align: right;
+
+  @include media-max(lg) {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.footer__logo {
+  margin-bottom: spacing(4);
+  
+  img {
+    filter: brightness(0) saturate(100%) invert(0%);
+  }
+}
+
+.footer__tagline {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  max-width: 400px;
+  margin: 0;
+}
+
+.footer__contacts {
+  @include flex(column, flex-start, flex-end);
+  gap: spacing(2);
+
+  @include media-max(lg) {
+    align-items: flex-start;
+  }
+}
+
+.footer__link {
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  text-decoration: underline;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $color-text-secondary;
+  }
+}

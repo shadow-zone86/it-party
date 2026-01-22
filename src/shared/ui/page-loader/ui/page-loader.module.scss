@@ -1,0 +1,46 @@
+@use '../../../../app/styles/_variables' as *;
+@use '../../../../app/styles/_mixins' as *;
+
+.pageLoader {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background-color: white;
+  transition: opacity 800ms ease-in-out; // Увеличили время и сделали более плавную функцию
+  opacity: 1;
+  transition-delay: 800ms;
+
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition-delay: 0ms;
+  }
+}
+
+.loadingLogo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logoBg {
+  opacity: 0.2;
+  filter: grayscale(100%);
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  transition: width 600ms ease-in-out; // Увеличили время и сделали более плавную функцию
+  width: 0%;
+}
+
+.logoFg {
+  max-width: none;
+  vertical-align: middle;
+}
