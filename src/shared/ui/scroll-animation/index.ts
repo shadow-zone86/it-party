@@ -1,0 +1,5 @@
+export { ScrollAnimation } from './ui/scroll-animation'
+export type { ScrollAnimationProps } from './ui/scroll-animation'
+export type { AnimationType } from './model/types'
+export { useScrollAnimation } from '@/shared/lib/hooks/useScrollAnimation'
+export type { ScrollAnimationOptions } from '@/shared/lib/hooks/useScrollAnimation'

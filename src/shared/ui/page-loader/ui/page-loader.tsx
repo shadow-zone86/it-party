@@ -19,7 +19,7 @@ export function PageLoader() {
     const from = 0
     const to = 75
 
-    const animate = (currentTime: number) => {
+    const animate = (currentTime: number): void => {
       if (!startTime) {
         startTime = currentTime
       }

@@ -1,0 +1,10 @@
+export type AnimationType =
+  | 'fade-up'
+  | 'fade-down'
+  | 'fade-left'
+  | 'fade-right'
+  | 'fade-in'
+  | 'zoom-in'
+  | 'zoom-in-up'
+  | 'slide-up'
+  | 'slide-down'

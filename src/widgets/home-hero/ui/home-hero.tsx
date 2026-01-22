@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { ScrollAnimation } from '@/shared/lib/scroll-animation'
+import { ScrollAnimation } from '@/shared/ui/scroll-animation'
 import styles from './home-hero.module.scss'
 
 export function HomeHero() {

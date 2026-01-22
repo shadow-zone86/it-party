@@ -1,5 +1,5 @@
 import { ProjectCard } from '@/shared/ui/project-card'
-import { ScrollAnimation } from '@/shared/lib/scroll-animation'
+import { ScrollAnimation } from '@/shared/ui/scroll-animation'
 import { PROJECTS } from '../config/constants'
 import type { Project } from '../model/types'
 import styles from './projects.module.scss'
