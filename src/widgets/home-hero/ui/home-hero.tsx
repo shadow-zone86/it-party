@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { ScrollAnimation } from '@/shared/lib/scroll-animation'
 import styles from './home-hero.module.scss'
 
 export function HomeHero() {
@@ -11,11 +12,11 @@ export function HomeHero() {
     const heroElement = heroRef.current
     if (!heroElement || !overlayRef.current) return
 
-    const handleMouseEnter = () => {
+    const handleMouseEnter = (): void => {
       document.body.style.cursor = 'url(/cursor.svg) 12 12, pointer'
     }
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = (): void => {
       document.body.style.cursor = 'default'
     }
 
@@ -43,11 +44,17 @@ export function HomeHero() {
       </video>
       <div ref={overlayRef} className={styles.hero__overlay} />
       <div className={styles.hero__content}>
-        <h1 className={styles.hero__title}>Соцсети. Приложения. Web.</h1>
-        <h2 className={styles.hero__subtitle}>Мобильная разработка.</h2>
-        <p className={styles.hero__description}>
-          Проектируем и дизайним <span className={styles.hero__accent}>со вкусом</span>
-        </p>
+        <ScrollAnimation animation="fade-up" delay={0} once={false}>
+          <h1 className={styles.hero__title}>Соцсети. Приложения. Web.</h1>
+        </ScrollAnimation>
+        <ScrollAnimation animation="fade-up" delay={200} once={false}>
+          <h2 className={styles.hero__subtitle}>Мобильная разработка.</h2>
+        </ScrollAnimation>
+        <ScrollAnimation animation="fade-up" delay={400} once={false}>
+          <p className={styles.hero__description}>
+            Проектируем и дизайним <span className={styles.hero__accent}>со вкусом</span>
+          </p>
+        </ScrollAnimation>
       </div>
     </section>
   )

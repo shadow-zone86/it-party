@@ -41,6 +41,14 @@
   margin: 0 spacing(8);
   flex-shrink: 0;
   position: relative;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity $transition-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   // Фиолетовый цвет для логотипа (#9B59B6)
   // Используем CSS filter для изменения цвета SVG

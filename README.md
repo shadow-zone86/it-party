@@ -48,6 +48,7 @@ IT Party — **эталонный проект** на Next.js с совреме�
 ✅ **SSR (Server-Side Rendering)** — предзагрузка данных на сервере
 ✅ **SCSS** — стилизация через SCSS модули и глобальные стили
 ✅ **TypeScript Compiler** — проверка типов через `tsc`
+✅ **Scroll Animations** — кастомная система анимаций при скролле без внешних библиотек
 
 ---
 
@@ -133,7 +134,11 @@ src/
     ├── config/            # Конфигурация
     ├── lib/               # Утилиты, DI контейнер, хуки
     │   ├── dayjs.ts
-    │   └── lodash.ts
+    │   ├── lodash.ts
+    │   └── scroll-animation/  # Система анимаций при скролле
+    │       ├── ScrollAnimation.tsx
+    │       ├── useScrollAnimation.ts
+    │       └── scroll-animation.module.scss
     └── ui/                # UI компоненты
         └── page-loader/   # Компонент загрузки страницы
 ```

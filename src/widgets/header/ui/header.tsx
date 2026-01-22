@@ -15,7 +15,7 @@ export function Header() {
           УСЛУГИ
         </Link>
 
-        <div className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           <Image
             src="/logo.svg"
             alt="IT Party"
@@ -23,7 +23,7 @@ export function Header() {
             height={52}
             priority
           />
-        </div>
+        </Link>
 
         <Link href="/solutions" className={styles.navLink}>
           БАЗА РЕШЕНИЙ
