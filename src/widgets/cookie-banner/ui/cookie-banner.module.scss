@@ -8,7 +8,7 @@
   z-index: $z-index-modal;
   max-width: 400px;
   width: calc(100% - #{spacing(8)});
-  
+
   @include media-max(md) {
     left: spacing(2);
     bottom: spacing(2);
@@ -22,7 +22,7 @@
   border-radius: 24px;
   padding: spacing(6);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  
+
   @include flex(column, flex-start, flex-start);
   gap: spacing(4);
 }
@@ -67,11 +67,11 @@
   color: $color-text-primary;
   cursor: pointer;
   transition: all $transition-base;
-  
+
   &:hover {
     background-color: $color-bg-secondary;
   }
-  
+
   &:active {
     transform: scale(0.98);
   }
@@ -90,7 +90,7 @@
   color: $color-text-secondary;
   text-decoration: underline;
   transition: color $transition-base;
-  
+
   &:hover {
     color: $color-text-primary;
   }
