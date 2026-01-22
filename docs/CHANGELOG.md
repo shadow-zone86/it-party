@@ -68,7 +68,28 @@
   - 5 глав документации в папке `docs/`
   - Обновлен корневой README.md
 
+- **SEO optimization**: Добавлена комплексная система SEO оптимизации
+  - Централизованная конфигурация SEO в `shared/config/seo.ts` с настройками сайта, контактов, социальных сетей
+  - Функция `generateMetadata()` для генерации метаданных страниц с поддержкой Open Graph и Twitter Cards
+  - Улучшены метаданные в `app/layout.tsx` и `app/page.tsx` с использованием централизованной конфигурации
+  - Structured Data (JSON-LD) компоненты в `shared/lib/structured-data.tsx`:
+    - Organization Schema для информации о компании
+    - WebSite Schema для информации о сайте
+    - Breadcrumb Schema для навигации (готов к использованию)
+    - Service Schema для страниц услуг (готов к использованию)
+  - Автоматическая генерация sitemap.xml через `app/sitemap.ts` с поддержкой всех основных страниц
+  - Robots.txt в `public/robots.txt` для управления индексацией поисковыми системами
+  - Метаданные с canonical URLs, keywords, robots настройками для каждой страницы
+  - Поддержка Google и Yandex верификации через переменные окружения
+  - Полная документация по SEO в `docs/06-seo.md` с примерами использования и best practices
+
 ### Changed
+- **Layout and page metadata**: Обновлены метаданные в `app/layout.tsx` и `app/page.tsx`
+  - Использование централизованной SEO конфигурации через `generateMetadata()`
+  - Добавлены Structured Data компоненты (Organization, WebSite) в layout
+  - Улучшены метаданные главной страницы с уникальным title и description
+  - Добавлен `generateViewport()` для корректной работы с Next.js 16
+
 - **Scroll animations refactoring**: Рефакторинг системы анимаций при скролле для соответствия FSD архитектуре
   - Хук `useScrollAnimation` перемещен из `shared/lib/scroll-animation/` в `shared/lib/hooks/`
   - Компонент `ScrollAnimation` перемещен из `shared/lib/scroll-animation/` в `shared/ui/scroll-animation/`
