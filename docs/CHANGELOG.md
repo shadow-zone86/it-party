@@ -9,12 +9,13 @@
 
 ### Added
 - **Scroll animations system**: Добавлена кастомная система анимаций при скролле
-  - Компонент `ScrollAnimation` в `shared/lib/scroll-animation`
-  - Хук `useScrollAnimation` с Intersection Observer API
+  - Компонент `ScrollAnimation` в `shared/ui/scroll-animation`
+  - Хук `useScrollAnimation` в `shared/lib/hooks/` с Intersection Observer API
   - Поддержка различных типов анимаций: fade-up, fade-down, fade-left, fade-right, fade-in, zoom-in, zoom-in-up, slide-up, slide-down
   - Настройки: delay, duration, threshold, rootMargin, once
   - Плавные анимации с cubic-bezier easing
   - Применено к виджетам: HomeHero, Projects, Clients, Analytics
+  - Добавлены unit-тесты для хука `useScrollAnimation` с полным покрытием функциональности
 
 - **Homepage widgets**: Добавлены основные виджеты для главной страницы
   - **Cookie Banner widget** (`widgets/cookie-banner`): Баннер согласия на использование cookies
@@ -68,6 +69,13 @@
   - Обновлен корневой README.md
 
 ### Changed
+- **Scroll animations refactoring**: Рефакторинг системы анимаций при скролле для соответствия FSD архитектуре
+  - Хук `useScrollAnimation` перемещен из `shared/lib/scroll-animation/` в `shared/lib/hooks/`
+  - Компонент `ScrollAnimation` перемещен из `shared/lib/scroll-animation/` в `shared/ui/scroll-animation/`
+  - Добавлена модель с типами (`model/types.ts`) для типизации анимаций
+  - Обновлены импорты во всех виджетах (HomeHero, Projects, Clients, Analytics)
+  - Улучшена структура экспортов через `index.ts`
+
 - **Homepage structure**: Обновлена структура главной страницы
   - Добавлены новые блоки: Projects, Clients, Analytics
   - Последовательность блоков: HomeHero → Projects → Clients → Analytics
@@ -104,6 +112,13 @@
   - Сохранение значения ref в переменную для корректной работы cleanup
 
 ### Removed
+- **Old scroll-animation structure**: Удалена старая структура scroll-animation из `shared/lib/scroll-animation/`
+  - `src/shared/lib/scroll-animation/ScrollAnimation.tsx`
+  - `src/shared/lib/scroll-animation/useScrollAnimation.ts`
+  - `src/shared/lib/scroll-animation/scroll-animation.module.scss`
+  - `src/shared/lib/scroll-animation/index.ts`
+  - Компоненты и хуки перемещены в правильные слои согласно FSD архитектуре
+
 - **Vue components**: Удалены все Vue компоненты
   - `src/shared/ui/PageLoader/PageLoader.vue`
   - `src/pages/index.vue`

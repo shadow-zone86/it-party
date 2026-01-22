@@ -1,5 +1,5 @@
 import { ANALYTICS_CARDS } from '../config/constants'
-import { ScrollAnimation } from '@/shared/lib/scroll-animation'
+import { ScrollAnimation } from '@/shared/ui/scroll-animation'
 import type { AnalyticsCard } from '../model/types'
 import styles from './analytics.module.scss'
 

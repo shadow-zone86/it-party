@@ -1,20 +1,10 @@
 'use client'
 
 import { ReactNode } from 'react'
-import { useScrollAnimation } from './useScrollAnimation'
+import { useScrollAnimation } from '@/shared/lib/hooks/useScrollAnimation'
+import type { AnimationType } from '../model/types'
 import styles from './scroll-animation.module.scss'
 import clsx from 'clsx'
-
-export type AnimationType =
-  | 'fade-up'
-  | 'fade-down'
-  | 'fade-left'
-  | 'fade-right'
-  | 'fade-in'
-  | 'zoom-in'
-  | 'zoom-in-up'
-  | 'slide-up'
-  | 'slide-down'
 
 export interface ScrollAnimationProps {
   children: ReactNode

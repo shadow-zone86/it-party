@@ -135,12 +135,14 @@ src/
     ├── lib/               # Утилиты, DI контейнер, хуки
     │   ├── dayjs.ts
     │   ├── lodash.ts
-    │   └── scroll-animation/  # Система анимаций при скролле
-    │       ├── ScrollAnimation.tsx
-    │       ├── useScrollAnimation.ts
-    │       └── scroll-animation.module.scss
+    │   └── hooks/         # React хуки
+    │       └── useScrollAnimation.ts  # Хук для анимаций при скролле
     └── ui/                # UI компоненты
-        └── page-loader/   # Компонент загрузки страницы
+        ├── page-loader/   # Компонент загрузки страницы
+        └── scroll-animation/  # Компонент анимаций при скролле
+            ├── ui/        # UI компонент
+            ├── model/     # Модель с типами
+            └── index.ts   # Публичный API
 ```
 
 > ⚠️ **Важно**: В этом проекте **не используется слой `pages`** из классической FSD архитектуры, так как Next.js 16 использует App Router, который уже предоставляет роутинг через папку `app/`. Страницы располагаются в `app/*/page.tsx`, что соответствует концепции слоя `pages` в FSD, но реализовано через механизм Next.js.

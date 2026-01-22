@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ScrollAnimation } from '@/shared/lib/scroll-animation'
+import { ScrollAnimation } from '@/shared/ui/scroll-animation'
 import styles from './clients.module.scss'
 
 const COMPANY_LOGOS = Array.from({ length: 15 }, (_, i) => ({
