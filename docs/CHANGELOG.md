@@ -8,6 +8,42 @@
 ## [Unreleased]
 
 ### Added
+- **Project detail widgets decomposition**: Полная декомпозиция виджетов детализации проектов с соблюдением FSD архитектуры
+  - **NextPageDetail widget** (`widgets/nextpage-detail`): Декомпозирован на отдельные entity UI компоненты (Header, Hero, Services, About, Contact, Footer)
+  - **PixelForgeDetail widget** (`widgets/pixelforge-detail`): Декомпозирован на отдельные entity UI компоненты (Header, Hero, Services, About, Contact, Footer)
+  - **WebCraftDetail widget** (`widgets/webcraft-detail`): Декомпозирован на отдельные entity UI компоненты (Header, Hero, Services, Process, Portfolio, Stats, Contact, Footer)
+  - Все константы вынесены в `config/constants.ts` на уровне виджетов и entities
+  - Все типы вынесены в `model/types.ts` на уровне виджетов и entities
+  - Использован паттерн "slot" для передачи features в entities через props (menu, form)
+  - Удалены монолитные файлы стилей виджетов, стили распределены по entity компонентам
+
+- **Mobile menu feature**: Создана переиспользуемая feature для мобильного меню
+  - **MobileMenu feature** (`features/mobile-menu`): UI компонент и хук `useMobileMenu` для управления состоянием меню
+  - Хук покрыт unit-тестами с полным покрытием функциональности
+  - Используется в виджетах через паттерн "slot" для соблюдения FSD правил
+
+- **Contact form features**: Созданы переиспользуемые features для форм контактов
+  - **ContactForm feature** (`features/contact-form`): Универсальная форма контактов с хуком `useContactForm`
+  - **WebCraftContactForm feature** (`features/webcraft-contact-form`): Специализированная форма для WebCraft с поддержкой select и messageType
+  - Хуки покрыты unit-тестами с полным покрытием функциональности
+  - Используются в виджетах через паттерн "slot" для соблюдения FSD правил
+
+- **Project entity UI components**: Созданы переиспользуемые UI компоненты для проектов
+  - **NextPage entity components** (`entities/project/ui/nextpage-*`): Header, Hero, Services, About, Contact, Footer
+  - **PixelForge entity components** (`entities/project/ui/pixelforge-*`): Header, Hero, Services, About, Contact, Footer
+  - **WebCraft entity components** (`entities/project/ui/webcraft-*`): Header, Hero, Services, Process, Portfolio, Stats, Contact, Footer
+  - Все компоненты используют локальные константы из `config/constants.ts`
+  - Все компоненты используют общие типы из `entities/project/model/types.ts`
+
+- **Shared UI components for error pages**: Добавлены переиспользуемые компоненты для страниц ошибок
+  - **ErrorContent component** (`shared/ui/error-content`): Компонент для отображения ошибок 500 с кнопкой повтора
+  - **NotFoundContent component** (`shared/ui/not-found-content`): Компонент для отображения 404 с настраиваемыми title, subtitle, description
+  - Используются в `app/error.tsx`, `app/global-error.tsx`, `app/not-found.tsx`, `app/global-not-found.tsx`, `app/projects/[slug]/not-found.tsx`
+
+- **Common types in project entity**: Вынесены общие интерфейсы в `entities/project/model/types.ts`
+  - **Service interface**: Общий интерфейс для услуг (icon: ReactNode, title: string, description: string)
+  - **Stat interface**: Общий интерфейс для статистики (number: string, label: string)
+  - Используются во всех entity компонентах services и stats
 - **Project detail page widgets**: Рефакторинг страницы детализации проекта с соблюдением FSD архитектуры
   - **ProjectDetailHeader widget** (`widgets/project-detail-header`): Виджет навигации с кнопкой "Назад к проектам"
   - **ProjectDetailBlocks widget** (`widgets/project-detail-blocks`): Виджет для рендеринга блоков проекта через функцию-рендерер
@@ -122,6 +158,19 @@
   - Полная документация по SEO в `docs/06-seo.md` с примерами использования и best practices
 
 ### Changed
+- **Project detail page simplification**: Упрощена страница детализации проекта `app/projects/[slug]/page.tsx`
+  - Удален `generateStaticParams` (не используется в текущей реализации)
+  - Упрощена логика рендеринга виджетов через прямое условие в JSX
+  - Улучшена читаемость и поддерживаемость кода
+
+- **Error and not-found pages refactoring**: Рефакторинг страниц ошибок для устранения дублирования
+  - Все страницы ошибок используют общие компоненты из `shared/ui`
+  - Упрощены стили страниц, оставлены только layout стили
+  - Контентные стили перенесены в shared компоненты
+
+- **File extensions fix**: Исправлены расширения файлов с JSX контентом
+  - Файлы констант с JSX переименованы из `.ts` в `.tsx` для корректной обработки TypeScript
+  - Затронуты файлы: `nextpage-services/config/constants.tsx`, `pixelforge-services/config/constants.tsx`, `webcraft-services/config/constants.tsx`
 - **Project detail page refactoring**: Полный рефакторинг страницы детализации проекта `app/projects/[slug]/page.tsx`
   - Убран большой switch/case блок (18+ case веток) из страницы
   - Маппинг блоков перенесен на уровень страницы (`app/projects/[slug]/config/block-registry.tsx`)
@@ -184,6 +233,11 @@
   - Удален неиспользуемый импорт `Link` из `webcraft-footer.tsx`
 
 ### Removed
+- **Monolithic widget styles**: Удалены монолитные файлы стилей виджетов
+  - `widgets/nextpage-detail/ui/nextpage-detail.module.scss`
+  - `widgets/pixelforge-detail/ui/pixelforge-detail.module.scss`
+  - `widgets/webcraft-detail/ui/webcraft-detail.module.scss`
+  - Стили распределены по соответствующим entity компонентам
 - **NextPageSmoothScroll widget**: Удален дублирующий виджет `widgets/nextpage-smooth-scroll`
   - Функциональность перенесена в `features/smooth-scroll`
   - Устранено дублирование кода

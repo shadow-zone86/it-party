@@ -1,0 +1,13 @@
+export interface ProcessStep {
+  number: string
+  title: string
+  description: string
+}
+
+export const STEPS: ProcessStep[] = [
+  { number: '1', title: 'Анализ', description: 'Изучаем ваш бизнес, конкурентов и целевую аудиторию' },
+  { number: '2', title: 'Проектирование', description: 'Создаём прототипы и проектируем архитектуру решения' },
+  { number: '3', title: 'Дизайн', description: 'Разрабатываем уникальный визуальный стиль проекта' },
+  { number: '4', title: 'Разработка', description: 'Пишем чистый код и реализуем весь функционал' },
+  { number: '5', title: 'Запуск', description: 'Тестируем, запускаем и обеспечиваем поддержку' },
+]

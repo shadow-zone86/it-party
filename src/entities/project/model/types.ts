@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export interface Project {
   id: string
   slug: string
@@ -29,4 +31,15 @@ export interface ProjectDetail {
   }
   /** Блоки контента (уникальные для каждого проекта) */
   blocks: ProjectDetailBlock[]
+}
+
+export interface Service {
+  icon: ReactNode
+  title: string
+  description: string
+}
+
+export interface Stat {
+  number: string
+  label: string
 }
