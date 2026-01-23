@@ -1,0 +1,139 @@
+.pixelforgeHero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.pixelforgeHero__content {
+  max-width: 800px;
+}
+
+.pixelforgeHero__logo {
+  margin-bottom: 2rem;
+
+  svg {
+    max-width: 350px;
+    height: auto;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      max-width: 250px;
+    }
+  }
+}
+
+.pixelforgeHero__slogan {
+  font-size: 1.5rem;
+  color: #16a34a;
+  margin-bottom: 2rem;
+  font-style: italic;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.pixelforgeHero__title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2d5016;
+  font-weight: $font-weight-bold;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+}
+
+.pixelforgeHero__description {
+  font-size: 1.1rem;
+  color: #166534;
+  margin-bottom: 2rem;
+  line-height: $line-height-relaxed;
+}
+
+.pixelforgeHero__cta {
+  display: inline-block;
+  background: #4ade80;
+  color: #ffffff;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(74, 222, 128, 0.4);
+    background: #22c55e;
+  }
+}
+
+.pixelforgeHero__content {
+  max-width: 800px;
+}
+
+.pixelforgeHero__logo {
+  margin-bottom: 2rem;
+
+  svg {
+    max-width: 350px;
+    height: auto;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      max-width: 250px;
+    }
+  }
+}
+
+.pixelforgeHero__slogan {
+  font-size: 1.5rem;
+  color: #16a34a;
+  margin-bottom: 2rem;
+  font-style: italic;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.pixelforgeHero__title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2d5016;
+  font-weight: $font-weight-bold;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+}
+
+.pixelforgeHero__description {
+  font-size: 1.1rem;
+  color: #166534;
+  margin-bottom: 2rem;
+  line-height: $line-height-relaxed;
+}
+
+.pixelforgeHero__cta {
+  display: inline-block;
+  background: #4ade80;
+  color: #ffffff;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(74, 222, 128, 0.4);
+    background: #22c55e;
+  }
+}

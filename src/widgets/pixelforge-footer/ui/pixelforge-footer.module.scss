@@ -1,0 +1,86 @@
+.pixelforgeFooter {
+  background: #2d5016;
+  color: #ffffff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.pixelforgeFooter__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+
+  span {
+    color: #4ade80;
+  }
+}
+
+.pixelforgeFooter__slogan {
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.pixelforgeFooter__links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.pixelforgeFooter__copyright {
+  opacity: 0.6;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.pixelforgeFooter__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+
+  span {
+    color: #4ade80;
+  }
+}
+
+.pixelforgeFooter__slogan {
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.pixelforgeFooter__links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.pixelforgeFooter__copyright {
+  opacity: 0.6;
+  font-size: 0.9rem;
+  margin: 0;
+}

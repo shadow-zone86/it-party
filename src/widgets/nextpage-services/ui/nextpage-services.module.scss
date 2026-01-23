@@ -1,0 +1,65 @@
+.nextpageServices {
+  padding: 5rem 2rem;
+  background: #ffffff;
+}
+
+.nextpageServices__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+  font-weight: $font-weight-bold;
+}
+
+.nextpageServices__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.nextpageServices__card {
+  background: #ecf0f1;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.nextpageServices__icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background: #3498db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 35px;
+    height: 35px;
+    fill: #ffffff;
+  }
+}
+
+.nextpageServices__cardTitle {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-weight: $font-weight-bold;
+  font-size: 1.25rem;
+}
+
+.nextpageServices__cardDescription {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
