@@ -1,7 +1,7 @@
 import { ProjectCard } from '@/shared/ui/project-card'
 import { ScrollAnimation } from '@/shared/ui/scroll-animation'
 import { PROJECTS } from '../config/constants'
-import type { Project } from '../model/types'
+import type { Project } from '@/entities/project/model/types'
 import styles from './projects.module.scss'
 
 export function Projects() {

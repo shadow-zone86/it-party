@@ -1,4 +1,4 @@
-import type { Project } from '../model/types'
+import type { Project } from '@/entities/project/model/types'
 
 export const PROJECTS: Project[] = [
   {
