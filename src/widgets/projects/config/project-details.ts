@@ -1,4 +1,4 @@
-import type { ProjectDetail } from '../model/types'
+import type { ProjectDetail } from '@/entities/project/model/types'
 
 /**
  * Конфигурация детализации проектов.

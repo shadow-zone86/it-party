@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 /**
  * Компонент для инициализации плавной прокрутки для якорных ссылок
  */
-export function NextPageSmoothScroll() {
+export function SmoothScroll() {
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent): void => {
       const target = e.target as HTMLElement

@@ -1,0 +1,13 @@
+.layout {
+  min-height: 100vh;
+  padding: 0;
+}
+
+.layout__content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.layout__contentWithSpacing {
+  padding-top: calc(50px + spacing(10));
+}

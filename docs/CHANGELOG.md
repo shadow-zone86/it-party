@@ -8,6 +8,21 @@
 ## [Unreleased]
 
 ### Added
+- **Project detail page widgets**: Рефакторинг страницы детализации проекта с соблюдением FSD архитектуры
+  - **ProjectDetailHeader widget** (`widgets/project-detail-header`): Виджет навигации с кнопкой "Назад к проектам"
+  - **ProjectDetailBlocks widget** (`widgets/project-detail-blocks`): Виджет для рендеринга блоков проекта через функцию-рендерер
+  - **ProjectDetailLayout widget** (`widgets/project-detail-layout`): Виджет-обертка для layout и smooth scroll
+  - Блок-регистрация на уровне страницы (`app/projects/[slug]/config/block-registry.tsx`) для соблюдения FSD правил
+  - Убраны все нарушения FSD (widgets → widgets импорты)
+
+- **Smooth scroll feature**: Вынесена функциональность плавной прокрутки в отдельную feature
+  - **SmoothScroll feature** (`features/smooth-scroll`): Компонент для инициализации плавной прокрутки якорных ссылок
+  - Используется в `widgets/project-detail-layout` для специальных проектов
+
+- **Project entity**: Перенесены типы проекта в слой entities согласно FSD
+  - **Project entity** (`entities/project/model/types.ts`): Типы `Project`, `ProjectDetail`, `ProjectDetailBlock`
+  - Все импорты обновлены на `@/entities/project/model/types`
+  - Удален старый файл `widgets/projects/model/types.ts`
 - **Error pages without header/footer**: Добавлены глобальные страницы ошибок без header и footer
   - `global-not-found.tsx` - глобальная страница 404 без header/footer (использует experimental.globalNotFound)
   - `global-error.tsx` - глобальная страница ошибок без header/footer
@@ -102,6 +117,12 @@
   - Полная документация по SEO в `docs/06-seo.md` с примерами использования и best practices
 
 ### Changed
+- **Project detail page refactoring**: Полный рефакторинг страницы детализации проекта `app/projects/[slug]/page.tsx`
+  - Убран большой switch/case блок (18+ case веток) из страницы
+  - Маппинг блоков перенесен на уровень страницы (`app/projects/[slug]/config/block-registry.tsx`)
+  - Страница теперь использует только 3 виджета: `ProjectDetailLayout`, `ProjectDetailHeader`, `ProjectDetailBlocks`
+  - Улучшена декомпозиция и читаемость кода
+  - Соблюдены все принципы FSD архитектуры
 - **Layout and page metadata**: Обновлены метаданные в `app/layout.tsx` и `app/page.tsx`
   - Использование централизованной SEO конфигурации через `generateMetadata()`
   - Добавлены Structured Data компоненты (Organization, WebSite) в layout
@@ -152,6 +173,12 @@
   - Удален неиспользуемый импорт `Link` из `webcraft-footer.tsx`
 
 ### Removed
+- **NextPageSmoothScroll widget**: Удален дублирующий виджет `widgets/nextpage-smooth-scroll`
+  - Функциональность перенесена в `features/smooth-scroll`
+  - Устранено дублирование кода
+
+- **Project types from widgets**: Удален файл `widgets/projects/model/types.ts`
+  - Типы перенесены в `entities/project/model/types.ts` согласно FSD
 - **Old scroll-animation structure**: Удалена старая структура scroll-animation из `shared/lib/scroll-animation/`
   - `src/shared/lib/scroll-animation/ScrollAnimation.tsx`
   - `src/shared/lib/scroll-animation/useScrollAnimation.ts`

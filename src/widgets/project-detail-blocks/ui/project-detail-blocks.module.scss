@@ -1,37 +1,6 @@
-.detail {
-  min-height: 100vh;
-  padding: 0;
-}
-
-.detail__back {
-  margin-bottom: spacing(6);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: spacing(4) spacing(4) 0;
-}
-
-.detail__backLink {
-  display: inline-flex;
-  align-items: center;
-  gap: spacing(2);
-  color: #6b7280;
-  text-decoration: none;
-  font-size: $font-size-base;
-  transition: color $transition-base;
-
-  &:hover {
-    color: #111827;
-  }
-}
-
-.detail__content {
+.blocks {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.detail__contentWithSpacing {
-  padding-top: calc(50px + spacing(10));
 }
 
 .hero {
