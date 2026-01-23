@@ -1,29 +1,17 @@
 import { notFound } from 'next/navigation'
-import {
-  getProjectDetailBySlug,
-  getProjectDetail,
-} from '@/widgets/projects/config/project-details'
+import Link from 'next/link'
+import { getProjectDetailBySlug } from '@/widgets/projects/config/project-details'
 import { generateMetadata as generateSeoMetadata } from '@/shared/config/seo'
 import type { Metadata } from 'next'
-import { ProjectDetailLayout } from '@/widgets/project-detail-layout'
-import { ProjectDetailHeader } from '@/widgets/project-detail-header'
-import { ProjectDetailBlocks } from '@/widgets/project-detail-blocks'
-import { BLOCK_REGISTRY } from './config/block-registry'
-import type { ProjectDetailBlock } from '@/entities/project/model/types'
+import { NextPageDetail } from '@/widgets/nextpage-detail'
+import { WebCraftDetail } from '@/widgets/webcraft-detail'
+import { PixelForgeDetail } from '@/widgets/pixelforge-detail'
+import styles from './page.module.scss'
 
 interface ProjectPageProps {
   params: Promise<{
     slug: string
   }>
-}
-
-export async function generateStaticParams(): Promise<{ slug: string; }[]> {
-  const { PROJECT_DETAILS } = await import(
-    '@/widgets/projects/config/project-details'
-  )
-  return Object.values(PROJECT_DETAILS).map((detail) => ({
-    slug: detail.slug,
-  }))
 }
 
 export async function generateMetadata({
@@ -47,33 +35,24 @@ export async function generateMetadata({
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params
-
-  // Пробуем найти по slug
-  let projectDetail = getProjectDetailBySlug(slug)
-
-  // Если не найдено по slug, пробуем найти по id (для обратной совместимости)
-  if (!projectDetail) {
-    projectDetail = getProjectDetail(slug)
-  }
+  const projectDetail = getProjectDetailBySlug(slug)
 
   if (!projectDetail) {
     notFound()
   }
 
-  const isSpecialProject = ['1', '2', '3'].includes(projectDetail.projectId)
-
-  const renderBlock = (block: ProjectDetailBlock, index: number) => {
-    const renderer = BLOCK_REGISTRY[block.type]
-    if (!renderer) {
-      return null
-    }
-    return renderer(block, index)
-  }
-
   return (
-    <ProjectDetailLayout enableSmoothScroll={isSpecialProject}>
-      <ProjectDetailHeader showBackButton={!isSpecialProject} />
-      <ProjectDetailBlocks blocks={projectDetail.blocks} renderBlock={renderBlock} />
-    </ProjectDetailLayout>
+    <main className={styles.layout}>
+      <div className={styles.content}>
+        <div className={styles.header}>
+          <Link href="/" className={styles.backLink}>
+            ← Назад к проектам
+          </Link>
+        </div>
+        {projectDetail.projectId === '1' && <NextPageDetail />}
+        {projectDetail.projectId === '2' && <WebCraftDetail />}
+        {projectDetail.projectId === '3' && <PixelForgeDetail />}
+      </div>
+    </main>
   )
 }

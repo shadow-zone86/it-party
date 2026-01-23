@@ -1,0 +1,39 @@
+.webcraftHeader {
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  width: 100%;
+}
+
+.webcraftHeader__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.webcraftHeader__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #1a1a2e;
+}
+
+.webcraftHeader__logoIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.webcraftHeader__logoText {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+
+  span {
+    color: #e94560;
+  }
+}
