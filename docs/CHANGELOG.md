@@ -23,6 +23,11 @@
   - **Project entity** (`entities/project/model/types.ts`): Типы `Project`, `ProjectDetail`, `ProjectDetailBlock`
   - Все импорты обновлены на `@/entities/project/model/types`
   - Удален старый файл `widgets/projects/model/types.ts`
+
+- **Shared UI components**: Добавлены переиспользуемые компоненты для блоков проекта
+  - **HeroBlock component** (`shared/ui/hero-block`): Компонент для отображения hero-блоков с изображением, заголовком и подзаголовком
+  - **TextBlock component** (`shared/ui/text-block`): Компонент для отображения текстовых блоков
+  - Компоненты используются в `app/projects/[slug]/config/block-registry.tsx` для соблюдения FSD правил
 - **Error pages without header/footer**: Добавлены глобальные страницы ошибок без header и footer
   - `global-not-found.tsx` - глобальная страница 404 без header/footer (использует experimental.globalNotFound)
   - `global-error.tsx` - глобальная страница ошибок без header/footer
@@ -123,6 +128,12 @@
   - Страница теперь использует только 3 виджета: `ProjectDetailLayout`, `ProjectDetailHeader`, `ProjectDetailBlocks`
   - Улучшена декомпозиция и читаемость кода
   - Соблюдены все принципы FSD архитектуры
+
+- **FSD compliance fix**: Исправлено нарушение FSD в блок-регистрации
+  - Удален импорт стилей из `widgets` в `app` слой (`block-registry.tsx`)
+  - Блоки `hero` и `text` теперь используют компоненты из `shared/ui` (HeroBlock, TextBlock)
+  - Удалены неиспользуемые стили из `widgets/project-detail-blocks`
+  - Достигнуто 100% соответствие правилам FSD зависимостей
 - **Layout and page metadata**: Обновлены метаданные в `app/layout.tsx` и `app/page.tsx`
   - Использование централизованной SEO конфигурации через `generateMetadata()`
   - Добавлены Structured Data компоненты (Organization, WebSite) в layout

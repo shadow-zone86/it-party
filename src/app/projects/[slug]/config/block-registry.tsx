@@ -20,8 +20,8 @@ import { PixelForgeServices } from '@/widgets/pixelforge-services'
 import { PixelForgeAbout } from '@/widgets/pixelforge-about'
 import { PixelForgeContact } from '@/widgets/pixelforge-contact'
 import { PixelForgeFooter } from '@/widgets/pixelforge-footer'
-import Image from 'next/image'
-import styles from '@/widgets/project-detail-blocks/ui/project-detail-blocks.module.scss'
+import { HeroBlock } from '@/shared/ui/hero-block'
+import { TextBlock } from '@/shared/ui/text-block'
 
 /**
  * Маппинг типов блоков на компоненты
@@ -56,36 +56,16 @@ export const BLOCK_REGISTRY: Record<
     const heroTitle = block.data.title as string
     const heroSubtitle = block.data.subtitle as string | undefined
     return (
-      <section className={styles.hero}>
-        {heroImage && (
-          <div className={styles.hero__imageWrap}>
-            <Image
-              src={heroImage}
-              alt={heroTitle}
-              fill
-              className={styles.hero__image}
-              priority={index === 0}
-              sizes="100vw"
-            />
-          </div>
-        )}
-        <div className={styles.hero__content}>
-          <h1 className={styles.hero__title}>{heroTitle}</h1>
-          {heroSubtitle && (
-            <p className={styles.hero__subtitle}>{heroSubtitle}</p>
-          )}
-        </div>
-      </section>
+      <HeroBlock
+        image={heroImage}
+        title={heroTitle}
+        subtitle={heroSubtitle}
+        priority={index === 0}
+      />
     )
   },
   text: (block) => {
     const textContent = block.data.content as string
-    return (
-      <section className={styles.text}>
-        <div className={styles.text__content}>
-          <p>{textContent}</p>
-        </div>
-      </section>
-    )
+    return <TextBlock content={textContent} />
   },
 }
