@@ -1,7 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './project-card.module.scss'
 
 export interface ProjectCardProps {
+  /** Slug проекта (для ссылки на детализацию) */
+  projectSlug?: string
   /** Название компании */
   companyName: string
   /** Название проекта */
@@ -17,6 +20,7 @@ export interface ProjectCardProps {
 }
 
 export function ProjectCard({
+  projectSlug,
   companyName,
   projectName,
   description,
@@ -24,8 +28,8 @@ export function ProjectCard({
   imageSrc,
   imageAlt = '',
 }: ProjectCardProps) {
-  return (
-    <article className={styles.card}>
+  const cardContent = (
+    <>
       <div className={styles.card__imageWrap}>
         <Image
           src={imageSrc}
@@ -37,8 +41,7 @@ export function ProjectCard({
       </div>
       <div className={styles.card__content}>
         <span className={styles.card__company}>{companyName}</span>
-        <h3 className={styles.card__title}>{projectName}</h3>
-        <p className={styles.card__description}>{description}</p>
+        <h3 className={styles.card__title}>{description}</h3>
         {tags.length > 0 && (
           <ul className={styles.card__tags}>
             {tags.map((tag) => (
@@ -49,6 +52,17 @@ export function ProjectCard({
           </ul>
         )}
       </div>
-    </article>
+    </>
   )
+
+  // Если есть projectSlug, оборачиваем в ссылку
+  if (projectSlug) {
+    return (
+      <Link href={`/projects/${projectSlug}`} className={styles.cardLink}>
+        <article className={styles.card}>{cardContent}</article>
+      </Link>
+    )
+  }
+
+  return <article className={styles.card}>{cardContent}</article>
 }

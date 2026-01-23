@@ -1,0 +1,109 @@
+.webcraftHeader {
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  width: 100%;
+}
+
+.webcraftHeader__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.webcraftHeader__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #1a1a2e;
+}
+
+.webcraftHeader__logoIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.webcraftHeader__logoText {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+
+  span {
+    color: #e94560;
+  }
+}
+
+.webcraftHeader__nav {
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    gap: 1rem;
+
+    &.webcraftHeader__navActive {
+      display: flex;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+
+    &:hover {
+      color: #e94560;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #e94560;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.webcraftHeader__menuBtn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+  background: none;
+  border: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  span {
+    width: 25px;
+    height: 2px;
+    background: #1a1a2e;
+    transition: 0.3s;
+  }
+}

@@ -1,0 +1,59 @@
+.nextpageAbout {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+
+.nextpageAbout__content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nextpageAbout__title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: $font-weight-bold;
+}
+
+.nextpageAbout__text {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  line-height: $line-height-relaxed;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.nextpageAbout__stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
+}
+
+.nextpageAbout__statItem {
+  text-align: center;
+}
+
+.nextpageAbout__statNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  display: block;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+  }
+}
+
+.nextpageAbout__statLabel {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}

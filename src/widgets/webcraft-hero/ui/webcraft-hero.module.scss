@@ -1,0 +1,149 @@
+.webcraftHero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle,
+      rgba(233, 69, 96, 0.15) 0%,
+      transparent 70%
+    );
+    top: -200px;
+    right: -200px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(
+      circle,
+      rgba(233, 69, 96, 0.1) 0%,
+      transparent 70%
+    );
+    bottom: -100px;
+    left: -100px;
+  }
+}
+
+.webcraftHero__content {
+  max-width: 900px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.webcraftHero__logo {
+  margin-bottom: 2rem;
+
+  svg {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.webcraftHero__title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  color: #ffffff;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+  }
+
+  span {
+    color: #e94560;
+  }
+}
+
+.webcraftHero__slogan {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  font-weight: 300;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.webcraftHero__description {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: $line-height-relaxed;
+}
+
+.webcraftHero__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.webcraftBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.webcraftBtnPrimary {
+  background: #e94560;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+
+  &:hover:not(:disabled) {
+    background: #ff6b6b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(233, 69, 96, 0.5);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.webcraftBtnSecondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}

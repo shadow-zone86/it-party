@@ -24,6 +24,7 @@ export function Projects() {
             delay={200 + index * 150}
           >
             <ProjectCard
+              projectSlug={project.slug}
               companyName={project.companyName}
               projectName={project.projectName}
               description={project.description}

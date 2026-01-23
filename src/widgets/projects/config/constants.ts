@@ -3,29 +3,32 @@ import type { Project } from '../model/types'
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    companyName: 'People company MN',
-    projectName: 'HR-платформа People company MN',
+    slug: 'nextpage',
+    companyName: 'NextPage',
+    projectName: 'NextPage',
     description:
-      'Разработка, UX/UI-дизайн и развитие айдентики для HR-платформы и карьерного портала',
-    tags: ['Продуктовый дизайн', 'Интеграции', 'Карьерные порталы'],
+      'Разработка корпоративного сайта, UX/UI-дизайн, адаптивная верстка',
+    tags: ['Веб-разработка', 'UX/UI', 'Дизайн'],
     imageSrc: '/project-1.jpeg',
   },
   {
     id: '2',
-    companyName: 'Forest Atom',
-    projectName: 'Экологическая платформа Forest Atom',
+    slug: 'webcraft-studio',
+    companyName: 'WebCraft Studio',
+    projectName: 'WebCraft Studio',
     description:
-      'Разработка веб-платформы и мобильного приложения для мониторинга экологических показателей и управления устойчивыми проектами',
-    tags: ['Дизайн', 'Разработка'],
+      'Создание сайта-портфолио, разработка интерфейсов, настройка форм обратной связи',
+    tags: ['Веб-разработка', 'Мобильные приложения', 'Автоматизация'],
     imageSrc: '/project-3.jpeg',
   },
   {
     id: '3',
-    companyName: 'Minnesota',
-    projectName: 'Платформа управления данными Minnesota',
+    slug: 'pixel-forge',
+    companyName: 'PixelForge',
+    projectName: 'PixelForge',
     description:
-      'Разработка мобильного приложения и веб-платформы для управления бизнес-процессами и аналитики',
-    tags: ['Мобильная разработка', 'UX/UI'],
+      'Проектирование веб-платформы, разработка с нуля, интеграция сервисов',
+    tags: ['Веб-разработка', 'UX/UI', 'Консалтинг'],
     imageSrc: '/project-2.jpeg',
   },
 ]

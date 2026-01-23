@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
     includePaths: [stylesPath],
     additionalData: `@use '${path.join(stylesPath, '_variables.scss')}' as *; @use '${path.join(stylesPath, '_mixins.scss')}' as *;`,
   },
+  experimental: {
+    globalNotFound: true,
+  },
 }
 
 export default withBundleAnalyzer(nextConfig)
