@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { ScrollAnimation } from '@/shared/ui/scroll-animation'
 import styles from './clients.module.scss'
 
@@ -26,7 +27,7 @@ export function Clients() {
             animation={index % 2 === 0 ? 'fade-right' : 'fade-left'}
             delay={200 + index * 50}
           >
-            <div className={styles.clients__logo}>
+            <Link href="/three-demo" className={styles.clients__logo}>
               <Image
                 src={logo.src}
                 alt={logo.alt}
@@ -34,7 +35,7 @@ export function Clients() {
                 height={100}
                 className={styles.clients__image}
               />
-            </div>
+            </Link>
           </ScrollAnimation>
         ))}
       </div>
