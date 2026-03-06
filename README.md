@@ -56,6 +56,7 @@ IT Party — **эталонный проект** на Next.js с совреме�
 ✅ **Mobile Navigation** — адаптивное гамбургер-меню для мобильных устройств
 ✅ **Error Pages** — глобальные страницы ошибок (404, 500) без header/footer для чистого UX
 ✅ **FSD Compliance** — 100% соответствие правилам Feature-Sliced Design архитектуры
+✅ **Three.js Demo** — интерактивная 3D-сцена с WebGL, загрузка GLB-моделей (ToyCar), управление вращением мышью
 
 ---
 
@@ -79,6 +80,7 @@ IT Party — **эталонный проект** на Next.js с совреме�
 - **clsx** — работа с классами CSS
 - **dayjs** — работа с датами
 - **lodash-es** — утилиты
+- **three** — 3D графика (WebGL), загрузка GLB/GLTF моделей
 
 ---
 
@@ -123,6 +125,7 @@ npm run dev
 ```
 src/
 ├── app/                    # ⚙️ Next.js App Router (роутинг и SSR)
+│   ├── three-demo/         # Страница демо Three.js (3D-сцена с моделью)
 │   ├── layout.tsx         # Корневой layout с провайдерами
 │   ├── page.tsx           # Главная страница
 │   ├── sitemap.ts          # Автоматическая генерация sitemap.xml
@@ -141,7 +144,8 @@ src/
 │   ├── nextpage-detail/  # Виджет детализации проекта NextPage
 │   ├── pixelforge-detail/ # Виджет детализации проекта PixelForge
 │   ├── webcraft-detail/  # Виджет детализации проекта WebCraft
-│   ├── clients/          # Блок клиентов
+│   ├── clients/          # Блок клиентов (логотипы ведут на /three-demo)
+│   ├── three-demo/       # Виджет 3D-сцены (Three.js, GLTFLoader, ToyCar.glb)
 │   ├── analytics/        # Блок аналитики
 │   ├── footer/           # Футер сайта
 │   └── cookie-banner/    # Баннер cookies
@@ -252,10 +256,14 @@ npm run type-check       # Проверка типов (tsc --noEmit)
 - **`/`** (Главная) — Главная страница приложения
   - **HomeHero** — Hero-секция с видео-фоном и заголовком
   - **Projects** — Блок с проектами компании
-  - **Clients** — Блок с логотипами клиентов (15 компаний)
+  - **Clients** — Блок с логотипами клиентов (15 компаний), клик по логотипу ведёт на `/three-demo`
   - **Analytics** — Блок с карточками аналитики (4 карточки)
   - **Footer** — Футер сайта с контактами и социальными сетями
   - **CookieBanner** — Баннер согласия на использование cookies
+
+- **`/three-demo`** (Three.js Demo) — Демонстрация Three.js
+  - **ThreeDemo** — интерактивная 3D-сцена с моделью ToyCar (GLB), вращение мышью
+  - Динамическая загрузка (ssr: false), BEM-стили, переменные из палитры
 
 - **`/projects/[slug]`** (Детализация проекта) — Страница детализации проекта
   - **ProjectDetailLayout** — Layout с поддержкой smooth scroll для специальных проектов
